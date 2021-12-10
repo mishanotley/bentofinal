@@ -4,6 +4,7 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <!-- <script src="https://github.com/aframevr/aframe/blob/master/examples/showcase/link-traversal/js/components/link-controls.js"></script> -->
   </head>
 
   <body>
@@ -41,17 +42,22 @@
           id="animedolls"
           src="https://cdn.glitch.me/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fanime_doll_model_glb.glb?v=1634550623626"
         ></a-asset-item>
-        </a-assets>
+
+        <!-- linktopage2 -->
+        <!-- <a-assets>
+          <img 
+          id="page2thumbnail" 
+          src="C:\Users\Misha Notley\Desktop\Residencies\Close Isn't Home\Code\bentofinal\public\assets\page2thumbnail.png">
+        </a-assets> -->
         <!-- End of asset management -->
       
-
 
 
       <!--Here is my scene-->
       <!-- environment preset -->
         <a-entity
           environment="preset: arches; 
-          groundColor: #FFFFFF; 
+          groundColor: #000000; 
           groundTexture: none; 
           dressing: aparatus; 
           dressingColor: #FFFFFF"
@@ -75,6 +81,12 @@
           rotation= "0 180 0"
           position="0 20 40"
         ></a-text>
+        
+          <!-- <a-entity 
+          link="href: C:\Users\Misha Notley\Desktop\Residencies\Close Isn't Home\Code\bentofinal\public\scenes\page2.html
+          title: page2
+          image: #page2thumbnail"
+        ></a-entity> -->
 
       <!--3dmodels-->
       
@@ -131,7 +143,7 @@
       </a-entity>
            
     <!--animedolls-->
-      <a-entity>
+      <!-- <a-entity>
         <a-gltf-model
           src="#animedolls"
           scale="0.5 0.5 0.5"
@@ -139,7 +151,7 @@
           rotation="0 0 0"
           animation-mixer 
         ></a-gltf-model>      
-      </a-entity>
+      </a-entity> -->
         
     <!--pillar-->
       <a-entity>
