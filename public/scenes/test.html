@@ -5,74 +5,91 @@
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
   </head>
+
   <body>
-    <!--     SCENE -->
+    <!--This is the scene-->
     <a-scene>
-      <!--       DECLARING MY ASSETS -->
+
+    <!--Declaring my assets-->
       <a-assets>
-        <!--BENTO1-->
+        <!--bento1-->
         <a-asset-item
           id="bento1"
           src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fbento_box_gltf.gltf?v=1632756967209"
         ></a-asset-item>
 
-        <!--RAMENANIMATION-->
-        <a-asset-item
+        <!--ramenanimation-->
+        <a-asset-item   
           id="ramenanimation"
           src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2FRamen%20(1).glb?v=1632937093471"
         ></a-asset-item>
         
-<!--         DOME -->
-               <a-asset-item
+        <!--dome-->
+        <a-asset-item
           id="dome"
           src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fglobe5.glb?v=1632922625015"
         ></a-asset-item>
       
-      <!--         PILLAR-->
-               <a-asset-item
+        <!--pillar-->
+        <a-asset-item
           id="pillar"
           src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fpillar.glb?v=1632925742561"
         ></a-asset-item>
       
-      <a-asset-item
-      id="animedolls"
-      src="https://cdn.glitch.me/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fanime_doll_model_glb.glb?v=1634550623626"
-></a-asset-item>
-         </a-assets>
+        <!-- animedolls -->
+        <a-asset-item
+          id="animedolls"
+          src="https://cdn.glitch.me/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fanime_doll_model_glb.glb?v=1634550623626"
+        ></a-asset-item>
+        </a-assets>
+        <!-- End of asset management -->
       
-      <!--       ENVIRONMENT -->
-      <a-entity
-        environment="preset: arches; groundColor: #FFFFFF; groundTexture: none; dressing: aparatus; dressingColor: #FFFFFF"
+
+
+
+      <!--Here is my scene-->
+      <!-- environment preset -->
+        <a-entity
+          environment="preset: arches; 
+          groundColor: #FFFFFF; 
+          groundTexture: none; 
+          dressing: aparatus; 
+          dressingColor: #FFFFFF"
       ></a-entity>
 
-      <a-light type="directional" color="#f4a4c0" position ="0 200 110" intensity ="1"></a-light>
+      <!-- lights -->
+        <a-light 
+          type="directional" 
+          color="#f4a4c0" 
+          position="0 200 110" 
+          intensity="1"
+        ></a-light>
         
-            <!--TEXT-->
-            <a-text 
-            id="text1"
-            value="Welcome!"
-            color="#fff"
-            align="center"
-            scale =" 5 10 1"
-            rotation= "0 180 0"
-            position="0 20 40"></a-text>
+      <!--text-->
+        <a-text 
+          id="text1"
+          value="Welcome!"
+          color="#fff"
+          align="center"
+          scale =" 5 10 1"
+          rotation= "0 180 0"
+          position="0 20 40"
+        ></a-text>
 
-      <!--MODELS IN SCENE-->
-
+      <!--3dmodels-->
       
-    <!--       DOME -->
-
+      <!--dome -->
       <a-entity>
         <a-gltf-model
           src="#dome"
-scale="0.02 0.02 0.02"
+          scale="0.02 0.02 0.02"
           position="0 0.2 -2"
           rotation="0 90 0"
           animation-mixer
         ></a-gltf-model>
+      </a-entity>
         
-      <!--       BENTO1 -->
-
+      <!--bento1-->
       <a-entity>
         <a-gltf-model
           src="#bento1"
@@ -82,8 +99,8 @@ scale="0.02 0.02 0.02"
         ></a-gltf-model>
       </a-entity>
         
-    <!--       BENTO2 -->
-              <a-entity>
+    <!--bento1-->
+      <a-entity>
         <a-gltf-model
           src="#bento1"
           scale="0.5 0.5 0.5"
@@ -92,8 +109,8 @@ scale="0.02 0.02 0.02"
         ></a-gltf-model>
       </a-entity>
         
- <!--       BENTO3 -->
-                      <a-entity>
+    <!--bento1-->
+      <a-entity>
         <a-gltf-model
           src="#bento1"
           scale="0.5 0.5 0.5"
@@ -102,8 +119,7 @@ scale="0.02 0.02 0.02"
         ></a-gltf-model>
       </a-entity>
 
-      <!--       RAMENANIMATION -->
-
+    <!--ramenanimation-->
       <a-entity>
         <a-gltf-model
           src="#ramenanimation"
@@ -113,10 +129,8 @@ scale="0.02 0.02 0.02"
           animation-mixer 
         ></a-gltf-model>      
       </a-entity>
-        
-        
-     <!--       ANIMEDOLLS -->
-
+           
+    <!--animedolls-->
       <a-entity>
         <a-gltf-model
           src="#animedolls"
@@ -127,19 +141,18 @@ scale="0.02 0.02 0.02"
         ></a-gltf-model>      
       </a-entity>
         
-<!--         PILLAR1 -->
-    <a-entity>
+    <!--pillar-->
+      <a-entity>
         <a-gltf-model
           src="#pillar"
           scale="0.001 0.001 0.001"
           position="0 0.06 -2"
-          rotation="0 0 0"
-          
+          rotation="0 0 0"    
         ></a-gltf-model>
       </a-entity>
         
-<!--         PILLAR2 -->
-          <a-entity>
+      <!--pillar-->
+      <a-entity>
         <a-gltf-model
           src="#pillar"
           scale="0.001 0.001 0.001"
@@ -147,10 +160,9 @@ scale="0.02 0.02 0.02"
           rotation="0 0 0"
         ></a-gltf-model>
       </a-entity>
-        
-        
-<!--         PILLAR3 -->        
-                  <a-entity>
+          
+      <!--pillar-->        
+      <a-entity>
         <a-gltf-model
           src="#pillar"
           scale="0.001 0.001 0.001"
@@ -158,6 +170,16 @@ scale="0.02 0.02 0.02"
           rotation="0 0 0"
         ></a-gltf-model>
 
+
+
+
+
+
+
+
+
+
+        
     </a-scene>
   </body>
 </html>
