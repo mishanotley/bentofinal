@@ -2,31 +2,163 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
   </head>
   <body>
+    <!--     SCENE -->
     <a-scene>
-      
-      //Declaring my objects
-      
+      <!--       DECLARING MY ASSETS -->
       <a-assets>
-        <a-asset-item id="bentobox" src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2FScene.gltf?v=1630966715595"></a-asset-item>
-      </a-assets>
+        <!--BENTO1-->
+        <a-asset-item
+          id="bento1"
+          src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fbento_box_gltf.gltf?v=1632756967209"
+        ></a-asset-item>
+
+        <!--RAMENANIMATION-->
+        <a-asset-item
+          id="ramenanimation"
+          src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2FRamen%20(1).glb?v=1632937093471"
+        ></a-asset-item>
+        
+<!--         DOME -->
+               <a-asset-item
+          id="dome"
+          src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fglobe5.glb?v=1632922625015"
+        ></a-asset-item>
       
-      <a-entity gltf-model="#bentobox" scale="100 100 100" position="0 0 0"></a-entity>
-      <a-cylinder position="0.00208 0.75 -3.83177" radius="0.5" height="1.5" color="#f5faff" material="side: double; color: #f5faff; transparent: true; opacity: 0.5" geometry=""></a-cylinder>
-      <a-cylinder position="2.50542 0.75 -3.83177" radius="0.5" height="1.5" color="#f5faff" material="side: double; color: #f5faff; transparent: true; opacity: 0.5" geometry=""></a-cylinder>
-      <a-cylinder position="-2.50237 0.75 -3.83177" radius="0.5" height="1.5" color="#f5faff" material="side: double; color: #f5faff; transparent: true; opacity: 0.5" geometry=""></a-cylinder>
+      <!--         PILLAR-->
+               <a-asset-item
+          id="pillar"
+          src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fpillar.glb?v=1632925742561"
+        ></a-asset-item>
       
-      <a-cylinder position="0.00208 0.75 -3.83177" radius="0.5" height="1.5" color="#f5faff" material="side: double; transparent: true; opacity: 0.9" geometry="radius: 0.61"></a-cylinder>
-      <a-cylinder position="0.00208 0 -5" radius="10" height="0.2" color="#000000" material="side: double; color: #f5faff; transparent: true; opacity: 0.8" geometry=""></a-cylinder>
-<!--       <a-sky colour="black" material="color: #141414" geometry=""></a-sky>
- -->
-          <a-sky
-        src="https://cdn.glitch.com/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fsky.png?v=1629231740868"
-        shader="standard"
-        material="emissive: #f90; emissiveIntensity: 0.0001"
-      ></a-sky>
-        </a-scene>
+      <a-asset-item
+      id="animedolls"
+      src="https://cdn.glitch.me/cff21be3-65fb-4629-84dd-9b39ed6c44a7%2Fanime_doll_model_glb.glb?v=1634550623626"
+></a-asset-item>
+         </a-assets>
+      
+      <!--       ENVIRONMENT -->
+      <a-entity
+        environment="preset: arches; groundColor: #FFFFFF; groundTexture: none; dressing: aparatus; dressingColor: #FFFFFF"
+      ></a-entity>
+
+      <a-light type="directional" color="#f4a4c0" position ="0 200 110" intensity ="1"></a-light>
+        
+            <!--TEXT-->
+            <a-text 
+            id="text1"
+            value="Welcome!"
+            color="#fff"
+            align="center"
+            scale =" 5 10 1"
+            rotation= "0 180 0"
+            position="0 20 40"></a-text>
+
+      <!--MODELS IN SCENE-->
+
+      
+    <!--       DOME -->
+
+      <a-entity>
+        <a-gltf-model
+          src="#dome"
+scale="0.02 0.02 0.02"
+          position="0 0.2 -2"
+          rotation="0 90 0"
+          animation-mixer
+        ></a-gltf-model>
+        
+      <!--       BENTO1 -->
+
+      <a-entity>
+        <a-gltf-model
+          src="#bento1"
+          scale="10 10 10"
+          position="0 1 -2"
+          rotation="0 0 0"
+        ></a-gltf-model>
+      </a-entity>
+        
+    <!--       BENTO2 -->
+              <a-entity>
+        <a-gltf-model
+          src="#bento1"
+          scale="0.5 0.5 0.5"
+          position="1 1 -2"
+          rotation="0 0 0"
+        ></a-gltf-model>
+      </a-entity>
+        
+ <!--       BENTO3 -->
+                      <a-entity>
+        <a-gltf-model
+          src="#bento1"
+          scale="0.5 0.5 0.5"
+          position="-1 1 -2"
+          rotation="0 0 0"
+        ></a-gltf-model>
+      </a-entity>
+
+      <!--       RAMENANIMATION -->
+
+      <a-entity>
+        <a-gltf-model
+          src="#ramenanimation"
+          scale="10 10 10"
+          position="-1 0.2 -7"
+          rotation="0 0 0"
+          animation-mixer 
+        ></a-gltf-model>      
+      </a-entity>
+        
+        
+     <!--       ANIMEDOLLS -->
+
+      <a-entity>
+        <a-gltf-model
+          src="#animedolls"
+          scale="0.5 0.5 0.5"
+          position="-1 0.2 -7"
+          rotation="0 0 0"
+          animation-mixer 
+        ></a-gltf-model>      
+      </a-entity>
+        
+        
+<!--         PILLAR1 -->
+    <a-entity>
+        <a-gltf-model
+          src="#pillar"
+          scale="0.001 0.001 0.001"
+          position="0 0.06 -2"
+          rotation="0 0 0"
+          
+        ></a-gltf-model>
+      </a-entity>
+        
+<!--         PILLAR2 -->
+          <a-entity>
+        <a-gltf-model
+          src="#pillar"
+          scale="0.001 0.001 0.001"
+          position="1 0.06 -2"
+          rotation="0 0 0"
+        ></a-gltf-model>
+      </a-entity>
+        
+        
+<!--         PILLAR3 -->        
+                  <a-entity>
+        <a-gltf-model
+          src="#pillar"
+          scale="0.001 0.001 0.001"
+          position="-1 0.06 -2"
+          rotation="0 0 0"
+        ></a-gltf-model>
+
+    </a-scene>
   </body>
 </html>
-
